@@ -42,9 +42,9 @@ def LiveMatrix(t, x=None):
 
 if __name__ == "__main__":
     def test():
-        W, W_tensor, t_tensor = LiveMatrix(1)
+        W, W_tensor, t_tensor = LiveMatrix(t=5)
         W_gradient = calculate_grad(W_tensor, t_tensor)
 
-        print(W, W_gradient)
+        print('t:', t_tensor.item(), 'W:', W, 'W_gradient:', W_gradient, sep='\n')
     
     test()
