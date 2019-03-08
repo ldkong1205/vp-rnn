@@ -6,17 +6,19 @@ import torch
 def calculate_grad(W_tensor, t_tensor):
     row = len(W_tensor)
     col = len(W_tensor[row - 1])
-    W_grad = [[None]] * row
+    W_grad = np.zeros((row, col))
 
     for i in range(row):
         for j in range(col):
-            t_tensor.grad.zero_()
-            W_tensor[i][j].backward()
+            if t_tensor.grad is not None:
+                t_tensor.grad.data.zero_()
+            if W_tensor[i][j].requires_grad:
+                W_tensor[i][j].backward()
             gradient = t_tensor.grad.data.item()
-            W_grad[i].append(gradient)
+            W_grad[i, j] = gradient
+            
     
-    gradient_matrix = np.array(W_grad)
-    return gradient_matrix
+    return W_grad
 
 def LiveMatrix(t, x=None):
     '''
@@ -31,10 +33,18 @@ def LiveMatrix(t, x=None):
     output: Tensor
     '''
     t_tensor = torch.tensor(t, dtype=torch.float, requires_grad=True)
-    W_tensor = [[torch.sin(2*t) + 2, torch.cos(2*t), torch.sin(4*t)], 
-        [torch.cos(2*t), torch.sin(2*t) + 2, torch.cos(4*t)], 
-        [torch.sin(4*t), torch.cos(4*t), torch.zeros(1)]]
+    W_tensor = [[torch.sin(2*t_tensor) + 2, torch.cos(2*t_tensor), torch.sin(4*t_tensor)], 
+        [torch.cos(2*t_tensor), torch.sin(2*t_tensor) + 2, torch.cos(4*t_tensor)], 
+        [torch.sin(4*t_tensor), torch.cos(4*t_tensor), torch.zeros(1)]]
     W = torch.tensor(W_tensor).detach().numpy()
     return W, W_tensor, t_tensor
 
 
+if __name__ == "__main__":
+    def test():
+        W, W_tensor, t_tensor = LiveMatrix(1)
+        W_gradient = calculate_grad(W_tensor, t_tensor)
+
+        print(W, W_gradient)
+    
+    test()
