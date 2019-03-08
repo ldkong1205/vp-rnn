@@ -1,17 +1,20 @@
 # Using PyTorch to automatically calculate gradient
 import numpy as np 
 import torch
+from toolz import curry
+from example import construction
 
-
-def LiveMatrix(t, shape=(3, 3), x=None):
+@curry
+def LiveMatrix(construct_fun, shape, t, x=None):
     '''
     Generate a time varianted matrix W with specific defination. This version use pytorch to define a time-varianted matrix
     which can automatically calculate his gradient with time. The W_tensor below is an example show you how to define your 
     specific matrix .
 
     Input
-    t: time step
+    construct_fun: the construction of you matrix
     shape: the shape of your defined matrix
+    t: time step
     x: ???
 
     Return
@@ -23,15 +26,7 @@ def LiveMatrix(t, shape=(3, 3), x=None):
     W_tensor = [None] * (shape[0] * shape[1])
 
     #-------Edit your matrix here-------#
-    W_tensor[0] = torch.sin(2 * t_tensor[0, 0]) + 2
-    W_tensor[1] = torch.cos(2 * t_tensor[0, 1])
-    W_tensor[2] = torch.sin(4 * t_tensor[0, 2])
-    W_tensor[3] = torch.cos(2 * t_tensor[1, 0])
-    W_tensor[4] = torch.sin(2 * t_tensor[1, 1]) + 2
-    W_tensor[5] = torch.cos(4 * t_tensor[1, 2])
-    W_tensor[6] = torch.sin(4 * t_tensor[2, 0])
-    W_tensor[7] = torch.cos(4 * t_tensor[2, 1])
-    W_tensor[8] = torch.zeros(1) * t_tensor[2, 2]
+    W_tensor = construct_fun(t_tensor, W_tensor)
     #-----------------------------------#
 
     W_tensor = torch.cat([i.reshape(-1, 1) for i in W_tensor]).view(*shape)
@@ -86,8 +81,9 @@ def calculate_grad(W_tensor, t_tensor):
 
 if __name__ == "__main__":
     def test():
+        f = LiveMatrix(construct_fun=construction, shape=(3, 3))
         # recomended using method
-        W, W_gradient, t = LiveMatrix(t=2)
+        W, W_gradient, t = f(t=2)
         print('t:', t, 'W:', W, 'W_gradient:', W_gradient, sep='\n')
 
         # another method when you want to better control
