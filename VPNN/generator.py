@@ -2,7 +2,7 @@
 import numpy as np 
 import torch
 from toolz import curry
-from example import construction
+from example import construction_matrix, construction_vector
 
 @curry
 def LiveMatrix(construct_fun, shape, t, x=None):
@@ -12,7 +12,7 @@ def LiveMatrix(construct_fun, shape, t, x=None):
     specific matrix .
 
     Input
-    construct_fun: the construction of you matrix
+    construct_fun: the construction of you matrix or vector
     shape: the shape of your defined matrix
     t: time step
     x: ???
@@ -23,13 +23,12 @@ def LiveMatrix(construct_fun, shape, t, x=None):
     t: current timestep
     '''
     t_tensor = torch.tensor([[t] * shape[1]] * shape[0], dtype=torch.float, requires_grad=True)
-    W_tensor = [None] * (shape[0] * shape[1])
+    W_tensor = torch.tensor([[0] * shape[1]] * shape[0], dtype=torch.float)
 
     #-------Edit your matrix here-------#
     W_tensor = construct_fun(t_tensor, W_tensor)
     #-----------------------------------#
 
-    W_tensor = torch.cat([i.reshape(-1, 1) for i in W_tensor]).view(*shape)
     W = W_tensor.detach().numpy()
     J = torch.sum(W_tensor)
     J.backward()
@@ -81,9 +80,12 @@ def calculate_grad(W_tensor, t_tensor):
 
 if __name__ == "__main__":
     def test():
-        f = LiveMatrix(construct_fun=construction, shape=(3, 3))
+        f1 = LiveMatrix(construct_fun=construction_matrix, shape=(3, 3))
+        f2 = LiveMatrix(construct_fun=construction_vector, shape=(3, 1))
         # recomended using method
-        W, W_gradient, t = f(t=2)
+        W, W_gradient, t = f1(t=2)
+        print('t:', t, 'W:', W, 'W_gradient:', W_gradient, sep='\n')
+        W, W_gradient, t = f1(t=2)
         print('t:', t, 'W:', W, 'W_gradient:', W_gradient, sep='\n')
 
         # another method when you want to better control
