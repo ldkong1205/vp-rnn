@@ -31,6 +31,8 @@ def LiveMatrix(construct_fun, shape, t, x=None):
 
     W = W_tensor.detach().numpy()
     J = torch.sum(W_tensor)
+    if t_tensor.grad is not None:
+        t_tensor.grad.data.zero_() # clear the old gradient
     J.backward()
     W_grad = t_tensor.grad.data.detach().numpy()
     
