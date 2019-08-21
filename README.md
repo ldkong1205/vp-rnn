@@ -15,3 +15,7 @@ Many practical control problems can be solved by being formulated as time-varyin
 ![image](https://github.com/ldkong1205/Varying-Parameter-RNN/blob/master/image/network.jpg)
 
 <br>
+
+![image](https://github.com/ldkong1205/Varying-Parameter-RNN/blob/master/image/Kinova.jpg)
+
+<br>
