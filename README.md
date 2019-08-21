@@ -16,6 +16,9 @@ Many practical control problems can be solved by being formulated as time-varyin
 
 <br>
 
+NETWORK STRUCTURE
+-----
+
 ![image](https://github.com/ldkong1205/Varying-Parameter-RNN/blob/master/image/network.jpg)
 
 <br>
