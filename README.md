@@ -12,6 +12,8 @@ Many practical control problems can be solved by being formulated as time-varyin
 
 Keywords: `time-varying systems`,  `recurrent neural network`,  `convergence`, `robustness`, `dynamic programming`.
 
+<br>
+
 ![image](https://github.com/ldkong1205/Varying-Parameter-RNN/blob/master/image/Kinova.jpg)
 
 <br>
