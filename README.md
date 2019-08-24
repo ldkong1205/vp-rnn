@@ -34,12 +34,25 @@ LICENSE
 Copyright © School of Automation Science & Engineering, South China University of Technology. All rights reserved.
 
 ```
-@article{Zhang2018Power,
-  title={Power-Type Varying-Parameter RNN for Solving TVQP Problems: Design, Analysis, and Applications},
-  author={Zhang, Zhijun and Kong, Ling Dong and Zheng, Lunan},
-  journal={IEEE Transactions on Neural Networks and Learning Systems},
-  volume={30},
-  pages={2419 - 2433},
-  year={2019},
+@ARTICLE{8589008, 
+  author={Z. {Zhang} and L. {Kong} and L. {Zheng}}, 
+  journal={IEEE Transactions on Neural Networks and Learning Systems}, 
+  title={Power-Type Varying-Parameter RNN for Solving TVQP Problems: Design, Analysis, and Applications}, 
+  year={2019}, 
+  volume={30}, 
+  number={8}, 
+  pages={2419-2433}, 
+}
+```
+
+```
+@ARTICLE{8463509, 
+  author={Z. {Zhang} and L. {Kong} and L. {Zheng} and P. {Zhang} and X. {Qu} and B. {Liao} and Z. {Yu}}, 
+  journal={IEEE Transactions on Systems, Man, and Cybernetics: Systems}, 
+  title={Robustness Analysis of a Power-Type Varying-Parameter Recurrent Neural Network for Solving Time-Varying QM and QP  Problems and Applications}, 
+  year={2018}, 
+  volume={pp}, 
+  number={pp}, 
+  pages={1-14}, 
 }
 ```
