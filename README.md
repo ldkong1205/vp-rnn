@@ -34,5 +34,12 @@ LICENSE
 Copyright © School of Automation Science & Engineering, South China University of Technology. All rights reserved.
 
 ```
-@
+@article{Zhang2018Power,
+  title={Power-Type Varying-Parameter RNN for Solving TVQP Problems: Design, Analysis, and Applications},
+  author={Zhang, Zhijun and Kong, Ling Dong and Zheng, Lunan},
+  journal={IEEE Transactions on Neural Networks and Learning Systems},
+  volume={30},
+  pages={2419 - 2433},
+  year={2019},
+}
 ```
