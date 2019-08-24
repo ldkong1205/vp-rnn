@@ -27,3 +27,8 @@ NETWORK STRUCTURE
 ![image](https://github.com/ldkong1205/Varying-Parameter-RNN/blob/master/image/network.jpg)
 
 <br>
+
+LICENSE
+-----
+
+Copyright © School of Automation Science & Engineering, South China University of Technology. All rights reserved.
