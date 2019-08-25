@@ -33,6 +33,11 @@ LICENSE
 
 Copyright © School of Automation Science & Engineering, South China University of Technology. All rights reserved.
 
+<br>
+
+Citation
+-----
+
 ```
 @ARTICLE{8589008, 
   author={Z. {Zhang} and L. {Kong} and L. {Zheng}}, 
