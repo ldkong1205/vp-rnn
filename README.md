@@ -31,9 +31,9 @@ NETWORK STRUCTURE
 LICENSE
 -----
 
-Copyright © School of Automation Science & Engineering, South China University of Technology. All rights reserved.
+- Copyright © School of Automation Science & Engineering, South China University of Technology. All rights reserved.
 
-<br>
+- Contact: ldkong@ieee.org
 
 Citation
 -----
