@@ -1,11 +1,11 @@
 # Varying-Parameter RNN
 An RNN Model for Solving Time-Varying Control Problems
 
-- [[Paper 1]](https://ieeexplore.ieee.org/document/8589008) (Convergence Analysis)
+- [[Paper 1](https://ieeexplore.ieee.org/document/8589008)] (Convergence Analysis)
 
-- [[Paper 2]](https://ieeexplore.ieee.org/document/8463509) (Robustness Analysis)
+- [[Paper 2](https://ieeexplore.ieee.org/document/8463509)] (Robustness Analysis)
 
-- [[Slide]](https://github.com/ldkong1205/Varying-Parameter-RNN/blob/master/Slide(in%20Chinese).pdf) (in Chinese)
+- [[Slide](https://github.com/ldkong1205/Varying-Parameter-RNN/blob/master/Slide(in%20Chinese).pdf)] (in Chinese)
 
 
 INTRODUCTION
