@@ -55,9 +55,9 @@ Citation
   author={Z. {Zhang} and L. {Kong} and L. {Zheng} and P. {Zhang} and X. {Qu} and B. {Liao} and Z. {Yu}}, 
   journal={IEEE Transactions on Systems, Man, and Cybernetics: Systems}, 
   title={Robustness Analysis of a Power-Type Varying-Parameter Recurrent Neural Network for Solving Time-Varying QM and QP  Problems and Applications}, 
-  year={2018}, 
-  volume={pp}, 
-  number={pp}, 
-  pages={1-14}, 
+  year={2020}, 
+  volume={50}, 
+  number={12}, 
+  pages={5106-5118}, 
 }
 ```
