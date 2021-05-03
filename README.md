@@ -1,6 +1,6 @@
 <br />
 <p align="center">
-  <img src="image/vp-rnn.png" alt="logo" width="280" height="86">
+  <img src="image/vp-rnn.png" alt="logo" width="320" height="98">
 
   <p align="center">
   <strong>Power-Type Varying-Parameter RNN for Solving TVQP Problems: Design, Analysis, and Applications</strong>
