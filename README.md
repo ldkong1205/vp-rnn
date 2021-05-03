@@ -20,7 +20,7 @@
 </p>
 
 ## About
-This repository contains the MATLAB implementation of <a href="https://ieeexplore.ieee.org/document/8589008">Power-Type Varying-Parameter RNN for Solving TVQP Problems: Design, Analysis, and Applications.
+This repository contains the MATLAB implementation of <a href="https://ieeexplore.ieee.org/document/8589008">Power-Type Varying-Parameter RNN for Solving TVQP Problems: Design, Analysis, and Applications</a> (VP-RNN).
 
 # Varying-Parameter RNN
 An RNN Model for Solving Time-Varying Control Problems
